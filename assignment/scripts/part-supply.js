@@ -35,7 +35,7 @@ for (x in supplyChanges) {
     console.log (`Added ${supplyChanges[x]} parts.`)
   } else if (supplyChanges[x] === 0) {
     console.log (`No change.`)
-  } else (supplyChanges[x] < 0) {
+  } else {
     console.log (`Removed ${supplyChanges[x]} parts.`)
   } 
 }
@@ -52,16 +52,18 @@ for (change of supplyChanges) {
     console.log (`Added ${change} parts.`)
   } else if (change === 0) {
     console.log (`No change.`)
-  } else (change < 0) {
+  } else {
     console.log (`Removed ${change} parts.`)
   } 
 }
-}
+
 // 8. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
-for (let i=0; i < supplyChanges.length; i++) {
-  let totalSupplies = supplyChanges[i]+=
+let totalSupplies = 0;
+for (let change of supplyChanges) {
+  totalSupplies += change;
 }
+
 console.log('8. Total supplies available is:', totalSupplies);
 
 // 9. We have a large stash of parts in our warehouse that we 
@@ -73,9 +75,9 @@ console.log('8. Total supplies available is:', totalSupplies);
 
 let boxes = 0;
 let totalParts = 572;
-while (totalParts > 0) {
+while (totalParts > 7) {
+  totalParts -= 7;
   boxes++;
-  totalParts - 7;
 }
 
 console.log('9. Filling boxes with a "while" loop', totalParts, boxes);
